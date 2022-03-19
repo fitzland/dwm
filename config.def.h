@@ -16,7 +16,7 @@ static const char col_cyan[]        = "#005577";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeSel]  = { col_cyan, col_gray1,  col_gray2 },
 };
 
 /* tagging */
@@ -30,6 +30,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       1 << 3,            0,           -1 },
 	{ "Inkscape",     NULL,       NULL,       1 << 3,            0,           -1 },
+	{ "Soffice",     NULL,       NULL,       1 << 2,            0,           -1 },
 	{ "Code",     NULL,       NULL,       1 << 1,            0,           1 },
 	{ "Thunar",     NULL,       NULL,       1 << 6,            0,           1 },
 	{ "Google-chrome",     NULL,       NULL,       1 << 5,            0,           1 },
