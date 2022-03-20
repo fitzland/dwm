@@ -98,6 +98,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_o,  viewtoright,    {0} },
 	{ MODKEY|ShiftMask,             XK_i,   tagtoleft,      {0} },
 	{ MODKEY|ShiftMask,             XK_o,  tagtoright,     {0} },
+	{ MODKEY|ControlMask,             XK_i,  tagandviewtoleft,     {0} },
+	{ MODKEY|ControlMask,             XK_o,  tagandviewtoright,     {0} },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)

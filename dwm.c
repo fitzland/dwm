@@ -222,6 +222,8 @@ static void showhide(Client *c);
 static void sigchld(int unused);
 static void spawn(const Arg *arg);
 static void tag(const Arg *arg);
+static void tagandviewtoleft(const Arg *arg);
+static void tagandviewtoright(const Arg *arg);
 static void tagmon(const Arg *arg);
 static void tagtoleft(const Arg *arg);
 static void tagtoright(const Arg *arg);
@@ -1892,6 +1894,26 @@ tag(const Arg *arg)
 		arrange(selmon);
 		if(viewontag && ((arg->ui & TAGMASK) != TAGMASK))
 			view(arg);
+	}
+}
+
+void
+tagandviewtoleft(const Arg *arg) {
+	if(selmon->sel != NULL
+	&& __builtin_popcount(selmon->tagset[selmon->seltags] & TAGMASK) == 1
+	&& selmon->tagset[selmon->seltags] > 1) {
+		selmon->sel->tags >>= 1;
+		view(&((Arg) { .ui = selmon->tagset[selmon->seltags] >> 1 }));
+	}
+}
+
+void
+tagandviewtoright(const Arg *arg) {
+	if(selmon->sel != NULL
+	&& __builtin_popcount(selmon->tagset[selmon->seltags] & TAGMASK) == 1
+	&& selmon->tagset[selmon->seltags] > 1) {
+		selmon->sel->tags <<= 1;
+		view(&((Arg) { .ui = selmon->tagset[selmon->seltags] << 1 }));
 	}
 }
 
