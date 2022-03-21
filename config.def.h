@@ -29,17 +29,17 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       1 << 3,            0,           -1 },
-	{ "Inkscape",     NULL,       NULL,       1 << 3,            0,           -1 },
-	{ "Soffice",     NULL,       NULL,       1 << 2,            0,           -1 },
-	{ "Code",     NULL,       NULL,       1 << 1,            0,           1 },
-	{ "Thunar",     NULL,       NULL,       1 << 6,            0,           1 },
-	{ "Google-chrome",     NULL,       NULL,       1 << 5,            0,           1 },
-	{ "Microsoft-edge",     NULL,       NULL,       1 << 5,            0,           1 },
-	{ "KeePassXC",     NULL,       NULL,       1 << 7,            0,           -1 },
-	{ "Spotify",  NULL,       NULL,       1 << 8,       0,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	/* class		instance	title	tags mask	switchtag	isfloating	monitor */
+	{ "Gimp",     		NULL,       	NULL,   1 << 3,         1,		0,           	-1 },
+	{ "Inkscape",     	NULL,       	NULL,   1 << 3,         1,		0,		-1 },
+	{ "Soffice",     	NULL,       	NULL,   1 << 2,         1,		0,		-1 },
+	{ "Code",     		NULL,       	NULL,	1 << 1,		1,		0,		1 },
+	{ "Thunar",     	NULL,		NULL,	1 << 6,		1,		0,		1 },
+	{ "Google-chrome",     	NULL,		NULL,	1 << 5,		1,		0,		1 },
+	{ "Microsoft-edge",     NULL,       	NULL,	1 << 5,		1,		0,		1 },
+	{ "KeePassXC",     	NULL,       	NULL,   1 << 7,		1,		0,           	-1 },
+	{ "Spotify",  		NULL,       	NULL,   1 << 8,       	1,		0,           	-1 },
+	{ "Firefox",  		NULL,       	NULL,   1 << 8,		1,		0,		-1 },
 };
 
 /* layout(s) */
