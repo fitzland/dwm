@@ -57,7 +57,6 @@ static const Layout layouts[] = {
 
 /* key definitions */
 #define MODKEY Mod4Mask
-#define ALTKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -70,7 +69,6 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-b", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_gray1, "-sf", col_cyan, NULL };
-static const char *termcmd[]  = { "st", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        	function        argument */
@@ -98,29 +96,19 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, 	tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_i,   	viewtoleft,     {0} },
 	{ MODKEY,                       XK_o,  		viewtoright,    {0} },
-	{ MODKEY|ShiftMask,             XK_i,   	tagtoleft,      {0} },
-	{ MODKEY|ShiftMask,             XK_o,  		tagtoright,     {0} },
-	{ MODKEY|ControlMask,             XK_i,  	tagandviewtoleft,     {0} },
-	{ MODKEY|ControlMask,             XK_o,  	tagandviewtoright,     {0} },
+	{ MODKEY|ControlMask,           XK_i,   	tagtoleft,      {0} },
+	{ MODKEY|ControlMask,           XK_o,  		tagtoright,     {0} },
+	{ MODKEY|ShiftMask,             XK_i,  		tagandviewtoleft,     {0} },
+	{ MODKEY|ShiftMask,             XK_o,  		tagandviewtoright,     {0} },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
 	TAGKEYS(                        XK_4,                      3)
-	TAGKEYS(                        XK_5, 	                   4)
+	TAGKEYS(                        XK_5,                      4)
 	TAGKEYS(                        XK_6,                      5)
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	TAGKEYS(                        XK_KP_End,                    0)
-	TAGKEYS(                        XK_KP_Down,                   1)
-	TAGKEYS(                        XK_KP_Page_Down,              2)
-	TAGKEYS(                        XK_KP_Left,                   3)
-	TAGKEYS(                        XK_KP_Begin,                  4)
-	TAGKEYS(                        XK_KP_Right,                  5)
-	TAGKEYS(                        XK_KP_Home,                   6)
-	TAGKEYS(                        XK_KP_Up,                     7)
-	TAGKEYS(                        XK_KP_Page_Up,                8)
-
 	{ MODKEY|ShiftMask,             XK_q,      	quit,           {0} },
 };
 
